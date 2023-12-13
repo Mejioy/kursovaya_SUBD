@@ -55,6 +55,8 @@
             this.bChange = new System.Windows.Forms.Button();
             this.bDelete = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.lServicesCount = new System.Windows.Forms.Label();
+            this.lEmployerCount = new System.Windows.Forms.Label();
             this.tabPage2.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVEmployeeList)).BeginInit();
@@ -177,6 +179,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.lEmployerCount);
             this.panel4.Controls.Add(this.bEmployeeAdd);
             this.panel4.Controls.Add(this.bEmployeeEdit);
             this.panel4.Controls.Add(this.bEmployeeRemove);
@@ -305,6 +308,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lServicesCount);
             this.panel1.Controls.Add(this.bAdd);
             this.panel1.Controls.Add(this.bChange);
             this.panel1.Controls.Add(this.bDelete);
@@ -359,6 +363,24 @@
             this.tabControl1.Size = new System.Drawing.Size(1382, 408);
             this.tabControl1.TabIndex = 0;
             // 
+            // lServicesCount
+            // 
+            this.lServicesCount.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lServicesCount.AutoSize = true;
+            this.lServicesCount.Location = new System.Drawing.Point(540, 25);
+            this.lServicesCount.Name = "lServicesCount";
+            this.lServicesCount.Size = new System.Drawing.Size(0, 16);
+            this.lServicesCount.TabIndex = 4;
+            // 
+            // lEmployerCount
+            // 
+            this.lEmployerCount.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lEmployerCount.AutoSize = true;
+            this.lEmployerCount.Location = new System.Drawing.Point(540, 25);
+            this.lEmployerCount.Name = "lEmployerCount";
+            this.lEmployerCount.Size = new System.Drawing.Size(0, 16);
+            this.lEmployerCount.TabIndex = 5;
+            // 
             // Administrator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -375,10 +397,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGVEmployeeList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dGVServicesList)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -413,6 +437,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn duration;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
+        private System.Windows.Forms.Label lServicesCount;
+        private System.Windows.Forms.Label lEmployerCount;
     }
 }
 

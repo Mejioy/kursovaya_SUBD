@@ -44,6 +44,8 @@
             this.providedserviceIdemployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.providedserviceIdautomobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.dTPTO = new System.Windows.Forms.DateTimePicker();
             this.dTPFrom = new System.Windows.Forms.DateTimePicker();
             this.bChange = new System.Windows.Forms.Button();
@@ -76,8 +78,7 @@
             this.employerid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employerFIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employerPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lClientCount = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -258,6 +259,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1268, 45);
             this.panel1.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(547, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(23, 16);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "до";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(95, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(138, 16);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Показать записи от";
             // 
             // dTPTO
             // 
@@ -507,6 +526,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.lClientCount);
             this.panel5.Controls.Add(this.label1);
             this.panel5.Controls.Add(this.bRemoveClient);
             this.panel5.Controls.Add(this.bClientEdit);
@@ -607,23 +627,14 @@
             this.employerPhone.Name = "employerPhone";
             this.employerPhone.ReadOnly = true;
             // 
-            // label2
+            // lClientCount
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(95, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 16);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Показать записи от";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(547, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(23, 16);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "до";
+            this.lClientCount.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lClientCount.AutoSize = true;
+            this.lClientCount.Location = new System.Drawing.Point(1084, 193);
+            this.lClientCount.Name = "lClientCount";
+            this.lClientCount.Size = new System.Drawing.Size(0, 16);
+            this.lClientCount.TabIndex = 11;
             // 
             // Employer
             // 
@@ -707,5 +718,6 @@
         private System.Windows.Forms.DateTimePicker dTPTO;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lClientCount;
     }
 }

@@ -34,6 +34,17 @@ namespace kursovaya
                 value4
                 );
         }
+        private void FillLabel()
+        {
+            using (SqlCommand command = new SqlCommand("CountOfRecordsServices", dataBase.GetConnection()))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                dataBase.OpenConnection();
+                var result = command.ExecuteScalar(); // Получение результата процедуры
+                dataBase.CloseConnection();
+                lServicesCount.Text = "Количество услуг: " + result.ToString();
+            }
+        }
         private void RefreshDataGrid(DataGridView dgw)
         {
             dgw.Rows.Clear();
@@ -47,6 +58,7 @@ namespace kursovaya
             }
             reader.Close();
             dataBase.CloseConnection();
+            FillLabel();
         }
 
         private void Client_Load(object sender, EventArgs e)

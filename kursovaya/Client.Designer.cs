@@ -35,8 +35,11 @@
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lServicesCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dGVServicesList)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dGVServicesList
@@ -50,15 +53,14 @@
             this.duration,
             this.price,
             this.description});
-            this.dGVServicesList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGVServicesList.Location = new System.Drawing.Point(5, 5);
+            this.dGVServicesList.Location = new System.Drawing.Point(10, 10);
             this.dGVServicesList.Margin = new System.Windows.Forms.Padding(5);
             this.dGVServicesList.Name = "dGVServicesList";
             this.dGVServicesList.ReadOnly = true;
             this.dGVServicesList.RowHeadersWidth = 51;
             this.dGVServicesList.RowTemplate.Height = 24;
             this.dGVServicesList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGVServicesList.Size = new System.Drawing.Size(872, 443);
+            this.dGVServicesList.Size = new System.Drawing.Size(858, 383);
             this.dGVServicesList.TabIndex = 1;
             // 
             // serviceid
@@ -112,11 +114,30 @@
             this.panel1.Size = new System.Drawing.Size(882, 453);
             this.panel1.TabIndex = 2;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.lServicesCount);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 401);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(882, 52);
+            this.panel2.TabIndex = 3;
+            // 
+            // lServicesCount
+            // 
+            this.lServicesCount.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lServicesCount.AutoSize = true;
+            this.lServicesCount.Location = new System.Drawing.Point(392, 19);
+            this.lServicesCount.Name = "lServicesCount";
+            this.lServicesCount.Size = new System.Drawing.Size(0, 16);
+            this.lServicesCount.TabIndex = 0;
+            // 
             // Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 453);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.MinimumSize = new System.Drawing.Size(900, 500);
             this.Name = "Client";
@@ -124,6 +145,8 @@
             this.Load += new System.EventHandler(this.Client_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGVServicesList)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -137,5 +160,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn duration;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lServicesCount;
     }
 }
