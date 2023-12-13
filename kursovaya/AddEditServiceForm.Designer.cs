@@ -116,6 +116,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tDescription.Location = new System.Drawing.Point(226, 175);
+            this.tDescription.MaxLength = 200;
             this.tDescription.Name = "tDescription";
             this.tDescription.Size = new System.Drawing.Size(330, 104);
             this.tDescription.TabIndex = 11;
@@ -147,6 +148,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tName.Location = new System.Drawing.Point(226, 25);
+            this.tName.MaxLength = 60;
             this.tName.Name = "tName";
             this.tName.Size = new System.Drawing.Size(330, 22);
             this.tName.TabIndex = 8;

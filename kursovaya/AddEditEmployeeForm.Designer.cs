@@ -146,6 +146,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tStreet.Location = new System.Drawing.Point(180, 275);
+            this.tStreet.MaxLength = 20;
             this.tStreet.Name = "tStreet";
             this.tStreet.Size = new System.Drawing.Size(217, 22);
             this.tStreet.TabIndex = 5;
@@ -156,6 +157,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tCity.Location = new System.Drawing.Point(180, 225);
+            this.tCity.MaxLength = 20;
             this.tCity.Name = "tCity";
             this.tCity.Size = new System.Drawing.Size(217, 22);
             this.tCity.TabIndex = 4;
@@ -177,6 +179,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tPatronym.Location = new System.Drawing.Point(180, 125);
+            this.tPatronym.MaxLength = 20;
             this.tPatronym.Name = "tPatronym";
             this.tPatronym.Size = new System.Drawing.Size(217, 22);
             this.tPatronym.TabIndex = 2;
@@ -187,6 +190,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tName.Location = new System.Drawing.Point(180, 75);
+            this.tName.MaxLength = 20;
             this.tName.Name = "tName";
             this.tName.Size = new System.Drawing.Size(217, 22);
             this.tName.TabIndex = 1;
@@ -197,6 +201,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tSurname.Location = new System.Drawing.Point(180, 25);
+            this.tSurname.MaxLength = 20;
             this.tSurname.Name = "tSurname";
             this.tSurname.Size = new System.Drawing.Size(217, 22);
             this.tSurname.TabIndex = 0;

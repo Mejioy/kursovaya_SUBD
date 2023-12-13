@@ -89,6 +89,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tModel.Location = new System.Drawing.Point(180, 77);
+            this.tModel.MaxLength = 15;
             this.tModel.Name = "tModel";
             this.tModel.Size = new System.Drawing.Size(230, 22);
             this.tModel.TabIndex = 17;
@@ -108,6 +109,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tMark.Location = new System.Drawing.Point(180, 27);
+            this.tMark.MaxLength = 10;
             this.tMark.Name = "tMark";
             this.tMark.Size = new System.Drawing.Size(230, 22);
             this.tMark.TabIndex = 15;

@@ -100,6 +100,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tPatronym.Location = new System.Drawing.Point(180, 127);
+            this.tPatronym.MaxLength = 20;
             this.tPatronym.Name = "tPatronym";
             this.tPatronym.Size = new System.Drawing.Size(220, 22);
             this.tPatronym.TabIndex = 13;
@@ -110,6 +111,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tName.Location = new System.Drawing.Point(180, 77);
+            this.tName.MaxLength = 20;
             this.tName.Name = "tName";
             this.tName.Size = new System.Drawing.Size(220, 22);
             this.tName.TabIndex = 11;
@@ -129,6 +131,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tSurname.Location = new System.Drawing.Point(180, 27);
+            this.tSurname.MaxLength = 20;
             this.tSurname.Name = "tSurname";
             this.tSurname.Size = new System.Drawing.Size(220, 22);
             this.tSurname.TabIndex = 9;
