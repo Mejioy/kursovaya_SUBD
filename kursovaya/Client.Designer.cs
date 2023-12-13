@@ -46,6 +46,9 @@
             // 
             this.dGVServicesList.AllowUserToAddRows = false;
             this.dGVServicesList.AllowUserToDeleteRows = false;
+            this.dGVServicesList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dGVServicesList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVServicesList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.serviceid,
@@ -60,7 +63,7 @@
             this.dGVServicesList.RowHeadersWidth = 51;
             this.dGVServicesList.RowTemplate.Height = 24;
             this.dGVServicesList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGVServicesList.Size = new System.Drawing.Size(858, 383);
+            this.dGVServicesList.Size = new System.Drawing.Size(908, 383);
             this.dGVServicesList.TabIndex = 1;
             // 
             // serviceid
@@ -111,7 +114,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(882, 453);
+            this.panel1.Size = new System.Drawing.Size(932, 453);
             this.panel1.TabIndex = 2;
             // 
             // panel2
@@ -120,7 +123,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 401);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(882, 52);
+            this.panel2.Size = new System.Drawing.Size(932, 52);
             this.panel2.TabIndex = 3;
             // 
             // lServicesCount
@@ -136,10 +139,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 453);
+            this.ClientSize = new System.Drawing.Size(932, 453);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.MinimumSize = new System.Drawing.Size(900, 500);
+            this.MinimumSize = new System.Drawing.Size(950, 500);
             this.Name = "Client";
             this.Text = "Приложение для клиента (список доступных услуг)";
             this.Load += new System.EventHandler(this.Client_Load);
