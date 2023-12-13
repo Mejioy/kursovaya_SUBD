@@ -44,6 +44,8 @@
             this.providedserviceIdemployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.providedserviceIdautomobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dTPTO = new System.Windows.Forms.DateTimePicker();
+            this.dTPFrom = new System.Windows.Forms.DateTimePicker();
             this.bChange = new System.Windows.Forms.Button();
             this.bDelete = new System.Windows.Forms.Button();
             this.bProvidedServiceAdd = new System.Windows.Forms.Button();
@@ -66,6 +68,7 @@
             this.carModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carGosnumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.bRemoveClient = new System.Windows.Forms.Button();
             this.bClientEdit = new System.Windows.Forms.Button();
             this.bAddClient = new System.Windows.Forms.Button();
@@ -73,7 +76,8 @@
             this.employerid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employerFIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employerPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -242,6 +246,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.dTPTO);
+            this.panel1.Controls.Add(this.dTPFrom);
             this.panel1.Controls.Add(this.bChange);
             this.panel1.Controls.Add(this.bDelete);
             this.panel1.Controls.Add(this.bProvidedServiceAdd);
@@ -251,10 +259,26 @@
             this.panel1.Size = new System.Drawing.Size(1268, 45);
             this.panel1.TabIndex = 0;
             // 
+            // dTPTO
+            // 
+            this.dTPTO.Location = new System.Drawing.Point(585, 15);
+            this.dTPTO.Name = "dTPTO";
+            this.dTPTO.Size = new System.Drawing.Size(200, 22);
+            this.dTPTO.TabIndex = 6;
+            this.dTPTO.ValueChanged += new System.EventHandler(this.dTPTO_ValueChanged);
+            // 
+            // dTPFrom
+            // 
+            this.dTPFrom.Location = new System.Drawing.Point(244, 15);
+            this.dTPFrom.Name = "dTPFrom";
+            this.dTPFrom.Size = new System.Drawing.Size(200, 22);
+            this.dTPFrom.TabIndex = 5;
+            this.dTPFrom.ValueChanged += new System.EventHandler(this.dTPFrom_ValueChanged);
+            // 
             // bChange
             // 
             this.bChange.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.bChange.Location = new System.Drawing.Point(1075, 8);
+            this.bChange.Location = new System.Drawing.Point(1075, 12);
             this.bChange.Name = "bChange";
             this.bChange.Size = new System.Drawing.Size(90, 30);
             this.bChange.TabIndex = 4;
@@ -265,7 +289,7 @@
             // bDelete
             // 
             this.bDelete.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.bDelete.Location = new System.Drawing.Point(1170, 8);
+            this.bDelete.Location = new System.Drawing.Point(1170, 12);
             this.bDelete.Name = "bDelete";
             this.bDelete.Size = new System.Drawing.Size(90, 30);
             this.bDelete.TabIndex = 3;
@@ -276,7 +300,7 @@
             // bProvidedServiceAdd
             // 
             this.bProvidedServiceAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.bProvidedServiceAdd.Location = new System.Drawing.Point(979, 8);
+            this.bProvidedServiceAdd.Location = new System.Drawing.Point(979, 12);
             this.bProvidedServiceAdd.Name = "bProvidedServiceAdd";
             this.bProvidedServiceAdd.Size = new System.Drawing.Size(90, 30);
             this.bProvidedServiceAdd.TabIndex = 0;
@@ -494,6 +518,15 @@
             this.panel5.Size = new System.Drawing.Size(1268, 250);
             this.panel5.TabIndex = 6;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(119, 16);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Список клиентов";
+            // 
             // bRemoveClient
             // 
             this.bRemoveClient.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -574,14 +607,23 @@
             this.employerPhone.Name = "employerPhone";
             this.employerPhone.ReadOnly = true;
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 16);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Список клиентов";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(95, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(138, 16);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Показать записи от";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(547, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(23, 16);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "до";
             // 
             // Employer
             // 
@@ -598,6 +640,7 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dGVProvidedList)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -660,5 +703,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn providedserviceIdemployee;
         private System.Windows.Forms.DataGridViewTextBoxColumn providedserviceIdautomobile;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dTPFrom;
+        private System.Windows.Forms.DateTimePicker dTPTO;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }

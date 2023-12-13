@@ -65,7 +65,7 @@ namespace kursovaya
                     break;
             }
         }
-        private void RefreshDataGrid(DataGridView dgw, int id=-1)
+        private void RefreshDataGrid(DataGridView dgw, int id=-1, DateTime? from = null, DateTime? to = null)
         {            
             dgw.Rows.Clear();
             string queryString = "";
@@ -81,7 +81,16 @@ namespace kursovaya
                         $"INNER JOIN service ON provided_service.idservice = service.id " +
                         $"INNER JOIN employee ON provided_service.idemployee = employee.id " +
                         $"INNER JOIN automobile ON provided_service.idautomobile = automobile.id " +
-                        $"INNER JOIN client ON automobile.idclient = client.id";
+                        $"INNER JOIN client ON automobile.idclient = client.id ";
+                    if (from != null)
+                    {
+                        queryString += $"WHERE provided_service.datatime >= '{from}' "; 
+                            
+                    }
+                    if(to != null)
+                    {
+                        queryString += $"AND provided_service.datatime <= '{to}'";
+                    }                    
                     break;
                 case "dGVClientsList":
                     queryString = $"select * from client";
@@ -128,6 +137,8 @@ namespace kursovaya
         
         private void Employer_Load(object sender, EventArgs e)
         {
+            DateTime dateTime = new DateTime(2020,1,1);
+            dTPFrom.Value = Convert.ToDateTime(dateTime.ToShortDateString()) ;
             RefreshDataGrid(dGVProvidedList);
             RefreshAll();
         }      
@@ -379,6 +390,22 @@ namespace kursovaya
             {
                 MessageBox.Show("Отсутствуют записи для удаления", "Уведомление");
             }
+        }
+
+        private void dTPFrom_ValueChanged(object sender, EventArgs e)
+        {
+            ChangeDateTimeFilter();
+        }
+
+        private void dTPTO_ValueChanged(object sender, EventArgs e)
+        {
+            ChangeDateTimeFilter();
+        }
+        private void ChangeDateTimeFilter()
+        {
+            DateTime? fromValue = dTPFrom.Value;
+            DateTime? toValue = dTPTO.Value;            
+            RefreshDataGrid(dGVProvidedList, -1,fromValue,toValue);
         }
     }
 }
