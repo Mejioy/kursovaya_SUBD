@@ -339,7 +339,7 @@ namespace kursovaya
                         Convert.ToInt32(dGVProvidedList.Rows[selectedRow].Cells[10].Value),
                         Convert.ToDateTime(dGVProvidedList.Rows[selectedRow].Cells[6].Value)
                         );
-                    providedServiceAddEdit.Text = "Изменение услуги";
+                    providedServiceAddEdit.Text = "Изменение информации об оказанной услуге";
                     if (providedServiceAddEdit.ShowDialog() == DialogResult.OK)
                     {
                         RefreshDataGrid(dGVProvidedList);
