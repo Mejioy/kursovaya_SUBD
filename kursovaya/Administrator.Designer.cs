@@ -39,6 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lEmployerCount = new System.Windows.Forms.Label();
             this.bEmployeeAdd = new System.Windows.Forms.Button();
             this.bEmployeeEdit = new System.Windows.Forms.Button();
             this.bEmployeeRemove = new System.Windows.Forms.Button();
@@ -51,12 +52,11 @@
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lServicesCount = new System.Windows.Forms.Label();
             this.bAdd = new System.Windows.Forms.Button();
             this.bChange = new System.Windows.Forms.Button();
             this.bDelete = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.lServicesCount = new System.Windows.Forms.Label();
-            this.lEmployerCount = new System.Windows.Forms.Label();
             this.tabPage2.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVEmployeeList)).BeginInit();
@@ -113,7 +113,7 @@
             this.dGVEmployeeList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVEmployeeList.Size = new System.Drawing.Size(1090, 310);
             this.dGVEmployeeList.TabIndex = 0;
-            this.dGVEmployeeList.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
+            this.dGVEmployeeList.SelectionChanged += new System.EventHandler(this.dGVEmployeeList_SelectionChanged);
             // 
             // employerid
             // 
@@ -190,6 +190,15 @@
             this.panel4.Size = new System.Drawing.Size(1374, 63);
             this.panel4.TabIndex = 3;
             // 
+            // lEmployerCount
+            // 
+            this.lEmployerCount.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lEmployerCount.AutoSize = true;
+            this.lEmployerCount.Location = new System.Drawing.Point(540, 25);
+            this.lEmployerCount.Name = "lEmployerCount";
+            this.lEmployerCount.Size = new System.Drawing.Size(0, 16);
+            this.lEmployerCount.TabIndex = 5;
+            // 
             // bEmployeeAdd
             // 
             this.bEmployeeAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -263,7 +272,7 @@
             this.dGVServicesList.RowTemplate.Height = 24;
             this.dGVServicesList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVServicesList.Size = new System.Drawing.Size(1374, 316);
-            this.dGVServicesList.TabIndex = 0;
+            this.dGVServicesList.TabIndex = 0;            
             // 
             // serviceid
             // 
@@ -319,6 +328,15 @@
             this.panel1.Size = new System.Drawing.Size(1374, 63);
             this.panel1.TabIndex = 1;
             // 
+            // lServicesCount
+            // 
+            this.lServicesCount.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lServicesCount.AutoSize = true;
+            this.lServicesCount.Location = new System.Drawing.Point(540, 25);
+            this.lServicesCount.Name = "lServicesCount";
+            this.lServicesCount.Size = new System.Drawing.Size(0, 16);
+            this.lServicesCount.TabIndex = 4;
+            // 
             // bAdd
             // 
             this.bAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -362,24 +380,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1382, 408);
             this.tabControl1.TabIndex = 0;
-            // 
-            // lServicesCount
-            // 
-            this.lServicesCount.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lServicesCount.AutoSize = true;
-            this.lServicesCount.Location = new System.Drawing.Point(540, 25);
-            this.lServicesCount.Name = "lServicesCount";
-            this.lServicesCount.Size = new System.Drawing.Size(0, 16);
-            this.lServicesCount.TabIndex = 4;
-            // 
-            // lEmployerCount
-            // 
-            this.lEmployerCount.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lEmployerCount.AutoSize = true;
-            this.lEmployerCount.Location = new System.Drawing.Point(540, 25);
-            this.lEmployerCount.Name = "lEmployerCount";
-            this.lEmployerCount.Size = new System.Drawing.Size(0, 16);
-            this.lEmployerCount.TabIndex = 5;
             // 
             // Administrator
             // 

@@ -129,12 +129,25 @@ namespace kursovaya
                 selectedRow = dGVServicesList.CurrentCell.RowIndex;
                 if (dGVServicesList.Rows[selectedRow].Cells[0].Value.ToString() != string.Empty)
                 {
-                    AddEditServiceForm addEditServiceForm = new AddEditServiceForm(
+                    AddEditServiceForm addEditServiceForm;
+                    if (dGVServicesList.Rows[selectedRow].Cells[4].Value!=null)
+                    {
+                        addEditServiceForm = new AddEditServiceForm(
                         Convert.ToInt32(dGVServicesList.Rows[selectedRow].Cells[0].Value),
                         dGVServicesList.Rows[selectedRow].Cells[1].Value.ToString(),
                         dGVServicesList.Rows[selectedRow].Cells[2].Value.ToString(),
                         dGVServicesList.Rows[selectedRow].Cells[3].Value.ToString(),
                         dGVServicesList.Rows[selectedRow].Cells[4].Value.ToString());
+                    }
+                    else
+                    {
+                        addEditServiceForm = new AddEditServiceForm(
+                        Convert.ToInt32(dGVServicesList.Rows[selectedRow].Cells[0].Value),
+                        dGVServicesList.Rows[selectedRow].Cells[1].Value.ToString(),
+                        dGVServicesList.Rows[selectedRow].Cells[2].Value.ToString(),
+                        dGVServicesList.Rows[selectedRow].Cells[3].Value.ToString(),
+                        null);
+                    }                    
                     addEditServiceForm.Text = "Изменение услуги";
                     if (addEditServiceForm.ShowDialog() == DialogResult.OK)
                     {
@@ -176,7 +189,7 @@ namespace kursovaya
             }
         }
 
-        private void dataGridView2_SelectionChanged(object sender, EventArgs e)
+        private void dGVEmployeeList_SelectionChanged(object sender, EventArgs e)
         {
             pictureBox1.Image = null;
             selectedRow = dGVEmployeeList.CurrentCell.RowIndex;
@@ -257,6 +270,6 @@ namespace kursovaya
             {
                 MessageBox.Show("Список сотрудников пуст", "Уведомление");
             }
-        }
+        }        
     }
 }
