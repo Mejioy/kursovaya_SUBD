@@ -131,6 +131,7 @@
             this.tPrice.Name = "tPrice";
             this.tPrice.Size = new System.Drawing.Size(330, 22);
             this.tPrice.TabIndex = 10;
+            this.tPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tDuration_KeyPress);
             // 
             // tDuration
             // 
@@ -141,6 +142,7 @@
             this.tDuration.Name = "tDuration";
             this.tDuration.Size = new System.Drawing.Size(330, 22);
             this.tDuration.TabIndex = 9;
+            this.tDuration.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tDuration_KeyPress);
             // 
             // tName
             // 
