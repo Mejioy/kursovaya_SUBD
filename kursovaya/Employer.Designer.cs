@@ -70,6 +70,7 @@
             this.carModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carGosnumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.lClientCount = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.bRemoveClient = new System.Windows.Forms.Button();
             this.bClientEdit = new System.Windows.Forms.Button();
@@ -78,7 +79,6 @@
             this.employerid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employerFIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employerPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lClientCount = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -538,6 +538,15 @@
             this.panel5.Size = new System.Drawing.Size(1268, 250);
             this.panel5.TabIndex = 6;
             // 
+            // lClientCount
+            // 
+            this.lClientCount.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lClientCount.AutoSize = true;
+            this.lClientCount.Location = new System.Drawing.Point(1084, 193);
+            this.lClientCount.Name = "lClientCount";
+            this.lClientCount.Size = new System.Drawing.Size(0, 16);
+            this.lClientCount.TabIndex = 11;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -626,15 +635,6 @@
             this.employerPhone.MinimumWidth = 6;
             this.employerPhone.Name = "employerPhone";
             this.employerPhone.ReadOnly = true;
-            // 
-            // lClientCount
-            // 
-            this.lClientCount.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lClientCount.AutoSize = true;
-            this.lClientCount.Location = new System.Drawing.Point(1084, 193);
-            this.lClientCount.Name = "lClientCount";
-            this.lClientCount.Size = new System.Drawing.Size(0, 16);
-            this.lClientCount.TabIndex = 11;
             // 
             // Employer
             // 

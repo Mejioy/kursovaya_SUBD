@@ -13,7 +13,7 @@ namespace kursovaya
 {
     public partial class Employer : Form
     {
-        DataBase dataBase = new DataBase("employer", "1q2w3e4r5");        
+        DataBase dataBase = new DataBase("employer", "1q2w3e4r5");
         int selectedRow;
         public Employer()
         {
@@ -25,9 +25,9 @@ namespace kursovaya
             switch (dgw.Name)
             {
                 case "dGVProvidedList":
-                    dgw.Rows.Add(                        
+                    dgw.Rows.Add(
                         record.GetInt32(0),
-                        record.GetString(1), 
+                        record.GetString(1),
                         record.GetString(2) + ' ' + record.GetString(3) + ' ' + record.GetString(4),
                         record.GetString(5) + ' ' + record.GetString(6) + ' ' + record.GetString(7),
                         record.GetString(8) + ' ' + record.GetString(9) + ' ' + record.GetString(10),
@@ -76,8 +76,8 @@ namespace kursovaya
                 lClientCount.Text = $"Количество клиентов: " + result.ToString();
             }
         }
-        private void RefreshDataGrid(DataGridView dgw, int id=-1, DateTime? from = null, DateTime? to = null)
-        {            
+        private void RefreshDataGrid(DataGridView dgw, int id = -1, DateTime? from = null, DateTime? to = null)
+        {
             dgw.Rows.Clear();
             string queryString = "";
             switch (dgw.Name)
@@ -95,13 +95,13 @@ namespace kursovaya
                         $"INNER JOIN client ON automobile.idclient = client.id ";
                     if (from != null)
                     {
-                        queryString += $"WHERE provided_service.datatime >= '{from}' "; 
-                            
+                        queryString += $"WHERE provided_service.datatime >= '{from}' ";
+
                     }
-                    if(to != null)
+                    if (to != null)
                     {
                         queryString += $"AND provided_service.datatime <= '{to}'";
-                    }                    
+                    }
                     break;
                 case "dGVClientsList":
                     queryString = $"select * from client";
@@ -114,7 +114,7 @@ namespace kursovaya
                     $"from  provided_service " +
                     $"INNER JOIN service ON provided_service.idservice = service.id " +
                     $"INNER JOIN employee ON provided_service.idemployee = employee.id " +
-                    $"INNER JOIN automobile ON provided_service.id = automobile.id " +
+                    //$"INNER JOIN automobile ON provided_service.id = automobile.id " +
                     $"where provided_service.idautomobile = '{id}'";
                     break;
                 default:
@@ -131,10 +131,11 @@ namespace kursovaya
             reader.Close();
             dataBase.CloseConnection();
             FillLabel();
-        }     
+        }
 
         private void RefreshAll()
-        {            
+        {
+            RefreshDataGrid(dGVProvidedList);
             RefreshDataGrid(dGVClientsList);
             if (dGVClientsList.Rows.Count > 0)
             {
@@ -146,15 +147,15 @@ namespace kursovaya
                 }
             }
         }
-        
+
         private void Employer_Load(object sender, EventArgs e)
         {
-            DateTime dateTime = new DateTime(2020,1,1);
-            dTPFrom.Value = Convert.ToDateTime(dateTime.ToShortDateString()) ;
+            DateTime dateTime = new DateTime(2020, 1, 1);
+            dTPFrom.Value = Convert.ToDateTime(dateTime.ToShortDateString());
             RefreshDataGrid(dGVProvidedList);
             RefreshAll();
-        }      
-        
+        }
+
 
         private void bAddClient_Click(object sender, EventArgs e)
         {
@@ -168,7 +169,7 @@ namespace kursovaya
 
         private void bClientEdit_Click(object sender, EventArgs e)
         {
-            if (dGVClientsList.Rows.Count>0)
+            if (dGVClientsList.Rows.Count > 0)
             {
                 selectedRow = dGVClientsList.CurrentCell.RowIndex;
                 if (dGVClientsList.Rows[selectedRow].Cells[0].Value.ToString() != string.Empty)
@@ -189,7 +190,7 @@ namespace kursovaya
             {
                 MessageBox.Show("Список клиентов пуст", "Уведомление");
             }
-            
+
         }
 
         private void bRemoveClient_Click(object sender, EventArgs e)
@@ -223,7 +224,7 @@ namespace kursovaya
 
         private void bAddCar_Click(object sender, EventArgs e)
         {
-            if(dGVClientsList.Rows.Count>0)
+            if (dGVClientsList.Rows.Count > 0)
             {
                 selectedRow = dGVClientsList.CurrentCell.RowIndex;
                 CarAddEdit carAddEdit = new CarAddEdit(Convert.ToInt32(dGVClientsList.Rows[selectedRow].Cells[0].Value));
@@ -237,7 +238,7 @@ namespace kursovaya
             else
             {
                 MessageBox.Show("Для добавления автомобиля сначала необходимо выбрать клиента из списка, но список клиентов пуст", "Уведомление");
-            }            
+            }
         }
 
         private void bEditCar_Click(object sender, EventArgs e)
@@ -272,7 +273,7 @@ namespace kursovaya
         {
             if (dGVCarsOfClient.Rows.Count > 0)
             {
-                selectedRow = dGVCarsOfClient.CurrentCell.RowIndex;                
+                selectedRow = dGVCarsOfClient.CurrentCell.RowIndex;
                 if (dGVCarsOfClient.Rows[selectedRow].Cells[0].Value.ToString() != string.Empty)
                 {
                     int id = Convert.ToInt32(dGVCarsOfClient.Rows[selectedRow].Cells[0].Value);
@@ -288,6 +289,7 @@ namespace kursovaya
                         dataBase.CloseConnection();
                         selectedRow = dGVClientsList.CurrentCell.RowIndex;
                         RefreshDataGrid(dGVCarsOfClient, Convert.ToInt32(dGVClientsList.Rows[selectedRow].Cells[0].Value));
+                        RefreshAll();
                     }
                 }
             }
@@ -295,7 +297,7 @@ namespace kursovaya
             {
                 MessageBox.Show("Список автомобилей пуст", "Уведомление");
             }
-        }            
+        }
 
         private void dGVClientsList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -308,7 +310,7 @@ namespace kursovaya
                 selectedRow = dGVCarsOfClient.CurrentCell.RowIndex;
                 RefreshDataGrid(dGVProvidedServicesOfCars, Convert.ToInt32(dGVCarsOfClient.Rows[selectedRow].Cells[0].Value));
                 if (dGVProvidedServicesOfCars.Rows.Count == 0)
-                {                    
+                {
                     lProvidedServices.Text = "Данному автомобилю не оказывались услуги";
                 }
                 else
@@ -327,7 +329,7 @@ namespace kursovaya
                 selectedRow = dGVCarsOfClient.CurrentCell.RowIndex;
                 RefreshDataGrid(dGVProvidedServicesOfCars, Convert.ToInt32(dGVCarsOfClient.Rows[selectedRow].Cells[0].Value));
                 if (dGVProvidedServicesOfCars.Rows.Count == 0)
-                {                    
+                {
                     lProvidedServices.Text = "Данному автомобилю не оказывались услуги";
                 }
                 else
@@ -373,12 +375,12 @@ namespace kursovaya
             {
                 MessageBox.Show("Отсутствуют записи для изменения", "Уведомление");
             }
-            
+
         }
 
         private void bDelete_Click(object sender, EventArgs e)
         {
-            if(dGVProvidedList.Rows.Count > 0)
+            if (dGVProvidedList.Rows.Count > 0)
             {
                 selectedRow = dGVProvidedList.CurrentCell.RowIndex;
                 if (dGVProvidedList.Rows[selectedRow].Cells[0].Value.ToString() != string.Empty)
@@ -397,7 +399,7 @@ namespace kursovaya
                         RefreshDataGrid(dGVProvidedList);
                     }
                 }
-            }            
+            }
             else
             {
                 MessageBox.Show("Отсутствуют записи для удаления", "Уведомление");
@@ -416,8 +418,8 @@ namespace kursovaya
         private void ChangeDateTimeFilter()
         {
             DateTime? fromValue = dTPFrom.Value;
-            DateTime? toValue = dTPTO.Value;            
-            RefreshDataGrid(dGVProvidedList, -1,fromValue,toValue);
+            DateTime? toValue = dTPTO.Value;
+            RefreshDataGrid(dGVProvidedList, -1, fromValue, toValue);
         }
     }
 }
